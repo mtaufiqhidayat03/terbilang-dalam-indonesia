@@ -58,4 +58,10 @@ function terbilang(number){
 	}
 	return kalimat;
 }
-console.log(terbilang(6321111));
+
+function cleanNumber(value) {
+    let cleaned = value.replace(/\D/g, '');
+    return cleaned;
+}
+
+console.log(terbilang(cleanNumber('6.321.111')));
