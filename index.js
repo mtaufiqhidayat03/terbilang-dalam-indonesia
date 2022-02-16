@@ -59,9 +59,14 @@ function terbilang(number){
 	return kalimat;
 }
 
-function cleanNumber(value) {
-    let cleaned = value.replace(/\D/g, '');
-    return cleaned;
+function cleanNumber(str) {
+  if (Number.isInteger(str)) {
+    return str;
+  } else {
+    return str.replace(/\D/g, "");
+  }
 }
 
-console.log(terbilang(cleanNumber('6.321.111')));
+console.log(terbilang(cleanNumber("6.321.111")));
+console.log(terbilang(cleanNumber("1.150.351")));
+console.log(terbilang(cleanNumber(6321111)));
